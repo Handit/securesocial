@@ -1,4 +1,7 @@
 import play.Project._
+import bintray.Keys._
+
+sbtPlugin := true
 
 name := "SecureSocial"
 
@@ -14,34 +17,35 @@ libraryDependencies ++= Seq(
 )
 
 resolvers ++= Seq(
+  Resolver.mavenLocal,
   Resolver.typesafeRepo("releases")
 )
 
-organization := "ws.securesocial"
+organization := "br.com.handit"
 
-organizationName := "SecureSocial"
+organizationName := "Handit"
 
 organizationHomepage := Some(new URL("http://www.securesocial.ws"))
 
-publishMavenStyle := true
+crossPaths := false
+
+publishMavenStyle := false
+
+bintrayPublishSettings
+
+repository in bintray := "sbt-plugins"
+
+bintrayOrganization in bintray := None
 
 publishArtifact in Test := false
 
 pomIncludeRepository := { _ => false }
 
-publishTo := {
-  val nexus = "https://oss.sonatype.org/"
-  if (version.value.trim.endsWith("SNAPSHOT"))
-    Some("snapshots" at nexus + "content/repositories/snapshots")
-  else
-    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
-}
-
 startYear := Some(2012)
 
 description := "An authentication module for Play Framework applications supporting OAuth, OAuth2, OpenID, Username/Password and custom authentication schemes."
 
-licenses := Seq("The Apache Software License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
+licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
 
 homepage := Some(url("http://www.securesocial.ws"))
 
