@@ -1,3 +1,10 @@
+h1. Fork
+
+This a a "fork" of SecureSocial with the <a href="https://github.com/jaliss/securesocial/pull/493">PR #493<a> merged to the master-play-2.2.x branch.
+To build it, you must install sbt and use the "publish" task in the "core" project (it also has the javaDemo and scalaDemo projects).
+You can't use "play"/"activator" prompts to publish. It has to be the raw sbt command.
+It is publishing the commits to a our own repository at bintray. You can change that also. 
+
 h1. SecureSocial for Play 2 
 
 SecureSocial allows you to add an authentication UI to your app that works with services based on OAuth1, OAuth2 and OpenID protocols.  SecureSocial provides Scala and Java APIs so you can integrate it using your preferred language.

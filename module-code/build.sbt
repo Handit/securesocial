@@ -1,7 +1,7 @@
 import play.Project._
 import bintray.Keys._
 
-sbtPlugin := true
+sbtPlugin := false
 
 name := "SecureSocial"
 
@@ -29,7 +29,7 @@ organizationHomepage := Some(new URL("http://www.securesocial.ws"))
 
 crossPaths := false
 
-publishMavenStyle := false
+publishMavenStyle := true
 
 bintrayPublishSettings
 
