@@ -2,6 +2,8 @@ name := "SecureSocial-parent"
 
 version := Common.version
 
+scalaVersion := "2.10.0"
+
 lazy val core =  project.in( file("module-code") )
 
 lazy val scalaDemo = project.in( file("samples/scala/demo") ).dependsOn(core)

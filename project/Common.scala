@@ -2,5 +2,6 @@ import sbt._
 import Keys._
 
 object Common {
-  def version = "master-play-2.2.x-v1"
+  def version = "master-play-2.2.x-v2"
+  def scalaVersion = "2.10.0"
 }

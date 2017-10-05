@@ -32,7 +32,7 @@ import play.mvc.SimpleResult;
  */
 public class DefaultSecuredActionResponses extends Controller implements SecuredActionResponses {
     public Html notAuthorizedPage(Http.Context ctx) {
-        return securesocial.views.html.notAuthorized.render(ctx.lang(), SecureSocial.env());
+        return  SecureSocial.env().viewTemplates().getNotAuthorizedPage(ctx.current()._requestHeader(), ctx.lang()); //.render(ctx.lang(), SecureSocial.env());
     }
 
     public F.Promise<SimpleResult> notAuthenticatedResult(Http.Context ctx) {
